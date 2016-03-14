@@ -27,7 +27,7 @@
  *         }
  *
  *
- * ### Other infomration and guidelines:
+ * ### Other information and guidelines:
  *
  * - Use the node version specified by the engines property in package.json.
  *
