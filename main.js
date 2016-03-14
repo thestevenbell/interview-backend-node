@@ -3,10 +3,10 @@
 /*
  * ## Task 1 (of 2)
  *
- * Create a script in this file that will pull data from a remote source JSON
- * feed, transform it, then output a different JSON feed matching a specific
- * schema. This script should execute when running `npm start` and should log
- * output to the console.
+ * Create a script starting in this file, but not limited to, that will pull
+ * data from a remote source JSON feed, transform it, then output a different
+ * JSON feed matching a specific schema.  This should execute when running
+ * `npm start` and should log output to the console.
  *
  *
  * ### Source:
@@ -27,9 +27,9 @@
  *         }
  *
  *
- * ### Other infomraiton and guidelines:
+ * ### Other infomration and guidelines:
  *
- * - Use the node version specified by the engines property in package.json
+ * - Use the node version specified by the engines property in package.json.
  *
  * - `url` should include the protocol and domain, which would be www.cnn.com.
  *
@@ -58,9 +58,8 @@
  *
  *
  *
- * ## Bonus
+ * ## Extra Credit
  *
- * Write a unit test to valid that the JSON ouput is valid and matches the
+ * Write a unit test to validate that the JSON ouput is valid and matches the
  * expected schema.
  */
-
