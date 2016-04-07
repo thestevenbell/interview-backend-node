@@ -2,10 +2,19 @@
   "name": "interview-backend-node",
   "version": "0.1.0",
   "description": "Interview - Backend Node",
-  "scripts": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "Steven Bell for CNNLabs",
+  "license": "MIT",
   "engines": {
     "node": "5.8.0"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.13.4",
+    "morgan": "^1.7.0",
+    "request": "^2.70.0"
+  },
+  "devDependencies": {}
 }

@@ -8,3 +8,16 @@ Once the pull request has been evaluated, it will be closed and someone will be 
 
 Thanks!
 
+## Directions for use of this Node Module:
+
+_Step 1_  Clone the repo locally
+_Step 2_  run $`npm install` from within the working directory
+_Step 4_
+_Step 5_
+_Step 6_
+
+
+> Notes:
+> added the via NPM: morgan, express and express.
+>
+>
