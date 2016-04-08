@@ -17,7 +17,8 @@ _Step 5_
 _Step 6_
 
 
+
 > Notes:
 > added the via NPM: morgan, express and express.
->
+> To use eslint run $`npm install -g eslint` and then $`npm test`
 >
