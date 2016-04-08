@@ -1,23 +1,23 @@
-var should = require("chai").should(),
-    expect = require("chai").expect,
-    supertest = require("supertest"),
-    api = supertest("http://localhost:3000"),
+var chai = require('chai'),
+    json = require('./main.js');
+    expect = require('chai').expect;
 
 
-
-describe('JSON', function(){
-  it("should return a JSON object", function(done){
-
+describe('', function(){
+  before(function () {
+    json.begin;
   });
 
-  it("should return an array", function(done){
-    api
-      .get('http://www.cnn.com/data/ocs/section/index.html:homepage1-zone-1.json')
-      .set("Accept", "application/json")
-      .end(function(error, response){
-        expect(response.body).to.be.an('array');
-        done();
-    });
+  it('is a valid JSON object', function(){
+    expect(json.finalProduct).to.be.a('array');
+  });
+  it('should not be empty array', function(){
+    expect(json.finalProduct).to.not.be.empty;
+  });
+  it('has the spec keys', function(){
+    expect(json.finalProduct).to.have.all.keys('url', 'headline', 'imageUrl', 'byLine')
   });
 
 });
+
+
