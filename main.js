@@ -5,8 +5,10 @@ var morgan = require('morgan'),
     request = require('request'),
     app = express(),
     url = 'http://www.cnn.com/data/ocs/section/index.html:homepage1-zone-1.json',
-    finalProduct = [],
-    topStories = [];
+    topStories = [],
+    returnedValues = [],
+    eachTopStory = {};
+
 
 app.use(morgan('combined'));
 
@@ -21,7 +23,8 @@ function begin() {
         if (!error && response.statusCode == 200) {
             var parsedJSONres = JSON.parse(body);
             extractValues(parsedJSONres);
-            getURL(topStories);
+            getEachTopStory(topStories);
+            console.log(`Output "Top Stories":\n ${returnedValues}`);
         } else {
             console.log(response.statusCode);
         }
@@ -44,16 +47,26 @@ function extractValues(parsedJSONres) {
     return JSON.stringify(topStories, null, 4);
 }
 
-// using string concatination to creat the final json object for printing to
-// the console.  Refacter to do this with .push
-function getURL(topStories)   {
+function getEachTopStory(topStories)   {
     topStories.forEach( function (stories) {
-        finalProduct += '{\"url\": \"http://www.cnn.com' + stories.cardContents.url + '\", \"headline\": \"' + stories.cardContents.headlinePlainText + '\", \"imageUrl\": \"' + stories.cardContents.media.elementContents.cuts["full16x9"].uri + '\", \"byLine\": \"' + stories.cardContents.auxiliaryText + '\" },';
+        eachTopStory = new Object();
+        eachTopStory.url = `http://www.cnn.com${stories.cardContents.url}`;
+        eachTopStory.headline = stories.cardContents.headlinePlainText;
+        eachTopStory.imageUrl = stories.cardContents.media.elementContents.cuts['full16x9'].uri;
+        eachTopStory.byLine = stories.cardContents.auxiliaryText;
+        returnedValues += JSON.stringify(eachTopStory);
+    //console.log("EACHTOPSTORY:  " + JSON.stringify(eachTopStory));
     });
-
-    console.log(finalProduct);
-    return  (finalProduct);
+    return  returnedValues;
 }
+
+    // {
+    //  "url": String,
+    //  "headline": String,
+    //  "imageUrl": String,
+    //  "byLine": String
+    // }
+
 
 // exports are breaking the app.  Need to investigate more.  The .forEach ln 52
 // throws TypeError: Cannot read property 'forEach' of undefined.
