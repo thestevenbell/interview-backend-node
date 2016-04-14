@@ -1,21 +1,25 @@
 var chai = require('chai'),
-    json = require('./main.js');
+    main = require('./main.js');
     expect = require('chai').expect;
 
+console.log("testing main.js");
 
-describe('', function(){
+describe('testing JSON object', function(){
+
   before(function () {
-    json.begin;
+    var input = main.begin();
+    var output = main.outputs();
+    console.log("TEST outputs: "  + output + " \n \n \n ");
   });
 
   it('is a valid JSON object', function(){
-    expect(json.finalProduct).to.be.a('array');
+    expect(output).to.be.a('array');
   });
   it('should not be empty array', function(){
-    expect(json.finalProduct).to.not.be.empty;
+    expect(output).to.not.be.empty;
   });
   it('has the spec keys', function(){
-    expect(json.finalProduct).to.have.all.keys('url', 'headline', 'imageUrl', 'byLine')
+    expect(output).to.have.all.keys('url', 'headline', 'imageUrl', 'byLine');
   });
 
 });

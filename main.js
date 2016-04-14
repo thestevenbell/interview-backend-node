@@ -71,10 +71,6 @@ function getEachTopStory(topStories)   {
 // exports are breaking the app.  Need to investigate more.  The .forEach ln 52
 // throws TypeError: Cannot read property 'forEach' of undefined.
 
-// // exports.begin = begin();
-// // exports.getURL = getURL();
-// // exports.extractValues = extractValues();
-// exports.finalProduct = finalProduct;
-// // exports.topStories = topStories;
+ module.exports.begin = begin;
 
 
